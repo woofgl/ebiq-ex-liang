@@ -4,13 +4,23 @@
 		"version": "1.0",
 		"description": "Chrome Extension for glassdoor crawler",
 		"icons": {
-				"1": "images/icon1.png"
+				"1": "imgs/icon1.png"
 		},
 		"browser_action": {
 				"default_icon": {
-						"1": "images/icon1.png"
+						"1": "imgs/icon1.png"
 				},
 				"default_title": "crawleradmin",
 				"default_popup": "popup.html"
-		}
+		},
+
+		"background":{
+			"scripts":["js-bg/main.js"]
+		},
+		
+		"permissions": [
+			"tabs",
+			"https://www.glassdoor.com/*"
+		]
+
 }
