@@ -1,0 +1,54 @@
+.loading-data{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 300px;
+	height: 40px;
+	padding-top: 20px;
+	margin-left: -150px;
+	margin-top: -20px;
+	box-shadow: 0px 3px 6px 0px rgba(65,65,65,0.32), 0px 3px 6px 0px rgba(65,65,65,0.46);
+	background: white;
+	font-size: 15px;
+	border-radius: 4px;
+	z-index: 9999;
+	text-align: center;
+}
+
+
+.done-crawl{
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	width: 640px;
+	height: 320px;
+	display: flex;
+	flex-flow: column;
+	margin-left: -320px;
+	margin-top: -160px;
+	box-shadow: 0px 3px 6px 0px rgba(65,65,65,0.32), 0px 3px 6px 0px rgba(65,65,65,0.46);
+	background: white;
+	border-radius: 4px;
+	z-index: 9999;
+}
+
+.done-crawl .main-content{
+	display: flex;
+	flex:1;
+	margin: 16px;
+}
+
+.done-crawl .main-content textarea{
+	flex:1;
+}
+
+.done-crawl .footer-toolbar{
+	height: 48px;
+	border-top: 1px solid #ccc;
+	padding-top: 12px;
+	text-align: right;
+}
+
+.done-crawl .footer-toolbar button{
+	margin-right: 16px;
+}

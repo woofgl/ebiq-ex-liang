@@ -15,12 +15,13 @@
 		},
 
 		"background":{
-			"scripts":["js-bg/main.js"]
+			"scripts":["ex-bg/main.js"]
 		},
 		
 		"permissions": [
 			"tabs",
-			"https://www.glassdoor.com/*"
+			"https://*/*",
+			"http://*/*"
 		]
 
 }
