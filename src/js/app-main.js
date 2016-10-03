@@ -6,7 +6,31 @@ $(function(){
 		// bg.crawGlassdoorInterviews();
 		crawGlassdoorInterviews();
 	});
+
+	loadCompanies();
 });
+
+function loadCompanies(){
+	var host = "http://localhost:8080";
+	var glassdoorUrl = "https://www.glassdoor.com/Interview";
+	return $.ajax({
+		url: host + "/getCompanyInterviewsPages",
+		dataType: "json",
+		type: "get"
+	}).done(function(data){
+		var results = data.result || [];
+		var $con = $(".glassdoors").empty();
+		for(var i = 0; i < results.length; i++){
+			var obj = results[i];
+			var url = "";
+			if(obj.glassdoor){
+				url = glassdoorUrl+"/"+obj.glassdoor+".htm";
+			}
+			var $item = $("<div class='glassdoor-item' data-url='"+url+"'>"+obj.company+"<a href="+url+" target='view_window'>next >> </a></div>");
+			$con.append($item);
+		}
+	});
+}
 
 function crawGlassdoorInterviews(){
 	chrome.tabs.getSelected(null, function(tab){

@@ -22,7 +22,7 @@ function postCrawl(result){
 	var doneEl = document.createElement("div");
 	doneEl.className = "done-crawl";
 	doneEl.id = "done-crawl";
-	doneEl.innerHTML = "<div class='main-content'><textarea id='done-crawl-value'></textarea></div> <div class='footer-toolbar'><button id='btn-cancel' class='btn-cancel'>Cancel</button></div>";
+	doneEl.innerHTML = "<div class='main-content'><textarea id='done-crawl-value'></textarea></div> <div class='footer-toolbar'><button id='btn-cancel' class='btn-cancel'>Cancel</button><button id='btn-save' class='btn-save'>Save</button></div>";
 	document.body.appendChild(doneEl);
 
 	var textarea = document.getElementById("done-crawl-value");
@@ -31,6 +31,11 @@ function postCrawl(result){
 
 	var btnCancel = document.getElementById("btn-cancel");
 	btnCancel.onclick = function(){
+		doneEl.parentNode.removeChild(doneEl);
+	};
+
+	var btnSave = document.getElementById("btn-save");
+	btnSave.onclick = function(){
 		doneEl.parentNode.removeChild(doneEl);
 	};
 }
